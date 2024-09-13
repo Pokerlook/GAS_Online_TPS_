@@ -1,0 +1,7 @@
+ < 멀티플레이어, 맵, 모드 바꾸려면 >
+GTTypes -> 맵 & 모드 Enum 수정.
+블루프린트 Content/Blueprint/MenuLobby/MainMenu의
+  -> JoinServer에서는 콤보박스 Content element 수정.
+ -> CreateServer에서는 SelectGameMap & SelectGameMode 함수 수정.
+
+
