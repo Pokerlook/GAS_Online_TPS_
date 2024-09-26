@@ -17,15 +17,19 @@ class GT_API UGTGameInstance : public UGameInstance
 	
 public:
 
+	UFUNCTION(BlueprintCallable, Category = "MainMenu")
+		void ClientReturnToMainMenu();
+
+public:
+
 	//UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	//	UDataTable* ItemDT;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Select)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		EGameMode SelectedGameMode = EGameMode::FreeForAll;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Select)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		EGameMap SelectedGameMap = EGameMap::Map1;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Team)
-		ETeam Team = ETeam::ET_NoTeam;
+
 };

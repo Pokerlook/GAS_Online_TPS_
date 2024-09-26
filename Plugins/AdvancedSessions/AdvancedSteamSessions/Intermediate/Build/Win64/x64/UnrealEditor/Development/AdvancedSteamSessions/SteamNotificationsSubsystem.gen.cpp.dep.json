@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsteamsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsteamsessions\\uht\\steamnotificationssubsystem.gen.cpp",
+        "Source": "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsteamsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsteamsessions\\uht\\steamnotificationssubsystem.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\unreal5works\\sa\\intermediate\\build\\win64\\x64\\saeditor\\development\\unrealed\\sharedpch.unrealed.project.novalfmtstr.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "d:\\unreal5works\\gt\\intermediate\\build\\win64\\x64\\gteditor\\development\\unrealed\\sharedpch.unrealed.project.novalfmtstr.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsteamsessions\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\advancedsteamsessions\\definitions.advancedsteamsessions.h",
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsteamsessions\\source\\advancedsteamsessions\\classes\\steamnotificationssubsystem.h",
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsteamsessions\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\advancedsteamsessions\\definitions.advancedsteamsessions.h",
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsteamsessions\\source\\advancedsteamsessions\\classes\\steamnotificationssubsystem.h",
             "d:\\epic games\\ue_5.4\\engine\\source\\thirdparty\\steamworks\\steamv157\\sdk\\public\\steam\\steam_api.h",
             "d:\\epic games\\ue_5.4\\engine\\source\\thirdparty\\steamworks\\steamv157\\sdk\\public\\steam\\steam_api_common.h",
             "d:\\epic games\\ue_5.4\\engine\\source\\thirdparty\\steamworks\\steamv157\\sdk\\public\\steam\\steamtypes.h",
@@ -41,7 +41,7 @@
             "d:\\epic games\\ue_5.4\\engine\\source\\thirdparty\\steamworks\\steamv157\\sdk\\public\\steam\\steamnetworkingtypes.h",
             "d:\\epic games\\ue_5.4\\engine\\source\\thirdparty\\steamworks\\steamv157\\sdk\\public\\steam\\isteamnetworkingsockets.h",
             "d:\\epic games\\ue_5.4\\engine\\source\\thirdparty\\steamworks\\steamv157\\sdk\\public\\steam\\isteamnetworkingutils.h",
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsteamsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsteamsessions\\uht\\steamnotificationssubsystem.generated.h"
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsteamsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsteamsessions\\uht\\steamnotificationssubsystem.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

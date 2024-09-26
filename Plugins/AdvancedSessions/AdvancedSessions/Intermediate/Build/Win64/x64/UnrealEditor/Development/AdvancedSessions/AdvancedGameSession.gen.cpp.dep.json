@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\advancedgamesession.gen.cpp",
+        "Source": "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\advancedgamesession.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\unreal5works\\sa\\intermediate\\build\\win64\\x64\\saeditor\\development\\unrealed\\sharedpch.unrealed.project.novalfmtstr.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "d:\\unreal5works\\gt\\intermediate\\build\\win64\\x64\\gteditor\\development\\unrealed\\sharedpch.unrealed.project.novalfmtstr.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\advancedsessions\\definitions.advancedsessions.h",
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\source\\advancedsessions\\classes\\advancedgamesession.h",
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\advancedsessions\\definitions.advancedsessions.h",
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\source\\advancedsessions\\classes\\advancedgamesession.h",
             "d:\\epic games\\ue_5.4\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\online.h",
             "d:\\epic games\\ue_5.4\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\onlinesubsystem.h",
             "d:\\epic games\\ue_5.4\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\onlinesubsystemmodule.h",
@@ -35,7 +35,7 @@
             "d:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamesession.generated.h",
             "d:\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
             "d:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\advancedgamesession.generated.h"
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\advancedgamesession.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

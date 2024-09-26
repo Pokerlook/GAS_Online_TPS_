@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\updatesessioncallbackproxyadvanced.gen.cpp",
+        "Source": "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\updatesessioncallbackproxyadvanced.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\unreal5works\\sa\\intermediate\\build\\win64\\x64\\saeditor\\development\\unrealed\\sharedpch.unrealed.project.novalfmtstr.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "d:\\unreal5works\\gt\\intermediate\\build\\win64\\x64\\gteditor\\development\\unrealed\\sharedpch.unrealed.project.novalfmtstr.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\advancedsessions\\definitions.advancedsessions.h",
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\source\\advancedsessions\\classes\\updatesessioncallbackproxyadvanced.h",
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\source\\advancedsessions\\classes\\blueprintdatadefinitions.h",
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\advancedsessions\\definitions.advancedsessions.h",
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\source\\advancedsessions\\classes\\updatesessioncallbackproxyadvanced.h",
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\source\\advancedsessions\\classes\\blueprintdatadefinitions.h",
             "d:\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
             "d:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
             "d:\\epic games\\ue_5.4\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\interfaces\\onlinesessioninterface.h",
@@ -118,8 +118,8 @@
             "d:\\epic games\\ue_5.4\\engine\\plugins\\online\\onlinesubsystemutils\\intermediate\\build\\win64\\unrealeditor\\inc\\onlinesubsystemutils\\uht\\testbeaconhost.generated.h",
             "d:\\epic games\\ue_5.4\\engine\\plugins\\online\\onlinesubsystemutils\\source\\onlinesubsystemutils\\classes\\turnbasedblueprintlibrary.h",
             "d:\\epic games\\ue_5.4\\engine\\plugins\\online\\onlinesubsystemutils\\intermediate\\build\\win64\\unrealeditor\\inc\\onlinesubsystemutils\\uht\\turnbasedblueprintlibrary.generated.h",
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\blueprintdatadefinitions.generated.h",
-            "d:\\unreal5works\\sa\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\updatesessioncallbackproxyadvanced.generated.h"
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\blueprintdatadefinitions.generated.h",
+            "d:\\unreal5works\\gt\\plugins\\advancedsessions\\advancedsessions\\intermediate\\build\\win64\\unrealeditor\\inc\\advancedsessions\\uht\\updatesessioncallbackproxyadvanced.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

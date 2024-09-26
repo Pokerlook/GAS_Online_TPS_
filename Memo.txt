@@ -4,4 +4,6 @@ GTTypes -> 맵 & 모드 Enum 수정.
   -> JoinServer에서는 콤보박스 Content element 수정.
  -> CreateServer에서는 SelectGameMap & SelectGameMode 함수 수정.
 
+블루프린트 Content/Blueprint/MenuLobby/Lobby/GameState의
+  BeginPlay쪽에서 Switch on String 수정.
 

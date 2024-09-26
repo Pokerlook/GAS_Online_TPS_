@@ -1,11 +1,11 @@
-"D:\unreal5Works\SA\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\UnrealEditor\Inc\AdvancedSessions\UHT\GetUserPrivilegeCallbackProxy.gen.cpp"
-/FI"D:\unreal5Works\SA\Intermediate\Build\Win64\x64\SAEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h"
-/FI"D:\unreal5Works\SA\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Definitions.AdvancedSessions.h"
-/Yu"D:\unreal5Works\SA\Intermediate\Build\Win64\x64\SAEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h"
-/Fp"D:\unreal5Works\SA\Intermediate\Build\Win64\x64\SAEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h.pch"
-/Fo"D:\unreal5Works\SA\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\GetUserPrivilegeCallbackProxy.gen.cpp.obj"
-/sourceDependencies "D:\unreal5Works\SA\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\GetUserPrivilegeCallbackProxy.gen.cpp.dep.json"
-@"D:\unreal5Works\SA\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\AdvancedSessions.Shared.rsp"
+"D:\unreal5Works\GT\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\UnrealEditor\Inc\AdvancedSessions\UHT\GetUserPrivilegeCallbackProxy.gen.cpp"
+/FI"D:\unreal5Works\GT\Intermediate\Build\Win64\x64\GTEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h"
+/FI"D:\unreal5Works\GT\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Definitions.AdvancedSessions.h"
+/Yu"D:\unreal5Works\GT\Intermediate\Build\Win64\x64\GTEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h"
+/Fp"D:\unreal5Works\GT\Intermediate\Build\Win64\x64\GTEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderOldest.h.pch"
+/Fo"D:\unreal5Works\GT\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\GetUserPrivilegeCallbackProxy.gen.cpp.obj"
+/sourceDependencies "D:\unreal5Works\GT\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\GetUserPrivilegeCallbackProxy.gen.cpp.dep.json"
+@"D:\unreal5Works\GT\Plugins\AdvancedSessions\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\AdvancedSessions.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

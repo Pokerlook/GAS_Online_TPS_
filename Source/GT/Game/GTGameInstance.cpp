@@ -3,3 +3,7 @@
 
 #include "GT/Game/GTGameInstance.h"
 
+void UGTGameInstance::ClientReturnToMainMenu()
+{
+	ReturnToMainMenu();
+}
