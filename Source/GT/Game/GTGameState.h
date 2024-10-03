@@ -21,15 +21,13 @@ public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Team")
-		void TeamChangingNotify(const TArray<AGTPlayerState*> &InRedTeam, const TArray<AGTPlayerState*> &InBlueTeam);
+		void TeamChangingNotify(const TArray<AGTPlayerState*> &TeamRed, const TArray<AGTPlayerState*> &TeamBlue);
 public:
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, ReplicatedUsing = OnRep_RedTeam, Category = "Team")// 
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, ReplicatedUsing = OnRep_Team, Category = "Team")// 
 		TArray<AGTPlayerState*> RedTeam;
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, ReplicatedUsing = OnRep_BlueTeam, Category = "Team")//  
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, ReplicatedUsing = OnRep_Team, Category = "Team")//  
 		TArray<AGTPlayerState*> BlueTeam;
 	
 	UFUNCTION()
-		void OnRep_RedTeam();
-	UFUNCTION()
-		void OnRep_BlueTeam();
+		void OnRep_Team();
 };

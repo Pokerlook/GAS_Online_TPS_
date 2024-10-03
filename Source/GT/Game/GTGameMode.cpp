@@ -57,25 +57,8 @@ void AGTGameMode::Logout(AController* Exiting)
 void AGTGameMode::ChangeTeam(AGTPlayerState* PS, ETeam TeamtoChange)
 {
 	AGTGameState* GTGameState = Cast<AGTGameState>(UGameplayStatics::GetGameState(this));
-	check(PS && GTGameState);
-
-	//if (GTGameState->RedTeam.Contains(PS))
-	//{
-	//	GTGameState->RedTeam.Remove(PS);
-	//}
-	//if (GTGameState->BlueTeam.Contains(PS))
-	//{
-	//	GTGameState->BlueTeam.Remove(PS);
-	//}
-
-	//if (TeamtoChange == ETeam::RedTeam)
-	//{
-	//	GTGameState->RedTeam.AddUnique(PS);
-	//}
-	//else if (TeamtoChange == ETeam::BlueTeam)
-	//{
-	//	GTGameState->BlueTeam.AddUnique(PS);
-	//}
+//	check(PS && GTGameState);
+	if (!GTGameState || !PS) return;
 
 	if (TeamtoChange == ETeam::RedTeam && !GTGameState->RedTeam.Contains(PS))
 	{
@@ -97,41 +80,4 @@ void AGTGameMode::ChangeTeam(AGTPlayerState* PS, ETeam TeamtoChange)
 	PS->Team = TeamtoChange;
 
 	GTGameState->TeamChangingNotify(GTGameState->RedTeam, GTGameState->BlueTeam);
-
-	FString RedTeamMembers;
-	// RedTeam 배열의 모든 요소를 루프
-    for (AGTPlayerState* PlayerState : GTGameState->RedTeam)
-    {
-        if (PlayerState)
-        {
-            // PlayerName을 가져와서 RedTeamMembers 문자열에 추가
-            RedTeamMembers.Append(PlayerState->GetPlayerName() + TEXT(", "));
-        }
-    }
-    // 마지막에 붙은 ", " 제거 (불필요할 경우)
-    if (RedTeamMembers.Len() > 0)
-    {
-        RedTeamMembers.RemoveFromEnd(TEXT(", "));
-    }
-    // RedTeam 배열에 있는 플레이어들의 이름을 한 줄로 출력
-    UE_LOG(LogTemp, Log, TEXT("Red Team Members: %s"), *RedTeamMembers);
-
-
-    FString BlueTeamMembers;
-    // BlueTeam 배열의 모든 요소를 루프
-    for (AGTPlayerState* PlayerState : GTGameState->BlueTeam)
-    {
-        if (PlayerState)
-        {
-            // PlayerName을 가져와서 BlueTeamMembers 문자열에 추가
-            BlueTeamMembers.Append(PlayerState->GetPlayerName() + TEXT(", "));
-        }
-    }
-    // 마지막에 붙은 ", " 제거 (불필요할 경우)
-    if (BlueTeamMembers.Len() > 0)
-    {
-        BlueTeamMembers.RemoveFromEnd(TEXT(", "));
-    }
-    // BlueTeam 배열에 있는 플레이어들의 이름을 한 줄로 출력
-    UE_LOG(LogTemp, Log, TEXT("Blue Team Members: %s"), *BlueTeamMembers);
 }

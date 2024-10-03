@@ -13,13 +13,8 @@ void AGTGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLife
 	DOREPLIFETIME(AGTGameState, BlueTeam);
 }
 
-
-void AGTGameState::OnRep_RedTeam()
+void AGTGameState::OnRep_Team()
 {
 	TeamChangingNotify(RedTeam, BlueTeam);
 }
 
-void AGTGameState::OnRep_BlueTeam()
-{
-	TeamChangingNotify(RedTeam, BlueTeam);
-}

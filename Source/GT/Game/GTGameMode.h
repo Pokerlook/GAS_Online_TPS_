@@ -22,8 +22,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Team")
 		void ChangeTeam(class AGTPlayerState* PS, ETeam TeamtoChange);
 
-	//UFUNCTION(BlueprintImplementableEvent, Category = "Team")
-	//	void TeamChangingNotify(const TArray<AGTPlayerState*>& InRedTeam, const TArray<AGTPlayerState*>& InBlueTeam);
 
 
 };
