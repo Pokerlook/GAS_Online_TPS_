@@ -20,7 +20,7 @@ class GT_API AGTGameState : public AGameState
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Team")
+	UFUNCTION(BlueprintImplementableEvent, Category = "Team")	// Only Used(implemented) at Lobby... (at LobbyGameState)
 		void TeamChangingNotify(const TArray<AGTPlayerState*> &TeamRed, const TArray<AGTPlayerState*> &TeamBlue);
 public:
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, ReplicatedUsing = OnRep_Team, Category = "Team")// 

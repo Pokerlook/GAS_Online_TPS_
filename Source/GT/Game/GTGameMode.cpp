@@ -39,7 +39,7 @@ void AGTGameMode::Logout(AController* Exiting)
 {
 	AGTGameState* GTGameState = Cast<AGTGameState>(UGameplayStatics::GetGameState(this));
 	AGTPlayerState* GTPState = Exiting->GetPlayerState<AGTPlayerState>();
-	if (GTGameState && GTPState)
+	if (GTGameState && GTPState && GTPState->Team != ETeam::NoTeam)
 	{
 		if (GTGameState->RedTeam.Contains(GTPState))
 		{

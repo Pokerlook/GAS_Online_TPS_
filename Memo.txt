@@ -2,8 +2,11 @@
 GTTypes -> 맵 & 모드 Enum 수정.
 블루프린트 Content/Blueprint/MenuLobby/MainMenu의
   -> JoinServer에서는 콤보박스 Content element 수정.
- -> CreateServer에서는 SelectGameMap & SelectGameMode 함수 수정.
+ -> CreateServer에서는 콤보박스 2개랑 SelectGameMap & SelectGameMode 함수 수정.
 
 블루프린트 Content/Blueprint/MenuLobby/Lobby/GameState의
   BeginPlay쪽에서 Switch on String 수정.
+
+블루프린트 Content/Blueprint/MenuLobby/Loby의 
+ WBP_LobbyModeMapChanger에서 콤보박스 2개 수정. 그래프에서 SwitchOnString수정
 

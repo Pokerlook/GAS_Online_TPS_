@@ -3,8 +3,36 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GT/GTTypes.h"
 #include "GameFramework/Character.h"
 #include "GTCharacterBase.generated.h"
+
+USTRUCT(BlueprintType)
+struct FGaitSettings : public FTableRowBase
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float MaxWalkSpeed = 0.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float MaxAcceleration = 0.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float BrakingDeceleration = 0.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float BrakingFrictionFactor = 0.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool UseSeperateBrakingFriction = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float BrakingFriction = 0.f;
+
+};
 
 UCLASS()
 class GT_API AGTCharacterBase : public ACharacter
@@ -12,18 +40,36 @@ class GT_API AGTCharacterBase : public ACharacter
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
 	AGTCharacterBase();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	UFUNCTION(BlueprintCallable)
+		void ToggleSprint(bool Newbool);
+
+	UFUNCTION(BlueprintCallable)
+		void ToggleCrouch(bool Newbool);
+
+	UFUNCTION(BlueprintCallable)
+		void ToggleStrafe(bool Newbool);
+
+	UFUNCTION(BlueprintCallable)
+		void ToggleAim(bool Newbool);
+
+protected:
+	virtual void BeginPlay() override;
+
+
+public:
+
+	UPROPERTY(BlueprintReadOnly, Category = "Character")
+		bool bWantsToStrafe = false;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Character")
+		bool bWantsToRun = false;
+
+protected:
+	UPROPERTY(BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = true))
+		TMap<EGaits, FGaitSettings> GaitSettings;
 
 };

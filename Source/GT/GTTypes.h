@@ -13,6 +13,7 @@ enum class EGameMode : uint8
 	Bomb UMETA(DisplayName = "Bomb"),
 	HostageRescue UMETA(DisplayName = "HostageRescue"),
 
+	MAX UMETA(DisplayName = "DefaultMAX")
 };
 
 UENUM(BlueprintType)
@@ -21,6 +22,7 @@ enum class EGameMap : uint8
 	Map1 UMETA(DisplayName = "Map1"),
 	Map2 UMETA(DisplayName = "Map2"),
 
+	MAX UMETA(DisplayName = "DefaultMAX")
 };
 
 UENUM(BlueprintType)
@@ -31,4 +33,12 @@ enum class ETeam : uint8
 	NoTeam UMETA(DisplayName = "NoTeam"),
 
 	MAX UMETA(DisplayName = "DefaultMAX")
+};
+
+UENUM(BlueprintType)
+enum class EGaits : uint8
+{
+	Sneeking      UMETA(DisplayName = "Sneeking"),
+	Normal      UMETA(DisplayName = "Normal"),
+	Sprinting    UMETA(DisplayName = "Sprinting")
 };
