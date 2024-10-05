@@ -70,8 +70,10 @@ Saved/*
 Intermediate/*
 Plugins/*/Intermediate/*
 Plugins/*/Binaries/*
-Plugins/*/*/Intermediate/*
-Plugins/*/*/Binaries/*
+Plugins/AdvancedSessions/AdvancedSessions/Intermediate/
+Plugins/AdvancedSessions/AdvancedSessions/Binaries/
+Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/
+Plugins/AdvancedSessions/AdvancedSteamSessions/Binaries/
 
 # Cache files for the editor to use
 DerivedDataCache/*
