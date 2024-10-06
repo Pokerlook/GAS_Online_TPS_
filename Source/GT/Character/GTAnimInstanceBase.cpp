@@ -30,3 +30,15 @@ void UGTAnimInstanceBase::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeThreadSafeUpdateAnimation(DeltaSeconds);
 }
+
+void UGTAnimInstanceBase::UpdateEssentialValues(float DeltaSeconds)
+{
+}
+
+void UGTAnimInstanceBase::GenerateTrajectory(float DeltaSeconds)
+{
+}
+
+void UGTAnimInstanceBase::UpdateStates()
+{
+}

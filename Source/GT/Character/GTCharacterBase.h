@@ -72,6 +72,8 @@ private:
 public:
 
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
+		EMovementType MovementMode;
+	UPROPERTY(BlueprintReadOnly, Category = "Character")
 		EGaits Gait;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
@@ -86,8 +88,8 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "Character")
 		bool JustLanded = false;
 
-	//UPROPERTY(BlueprintReadWrite, Category = "Character")
-	//	FVector LandVelocity = FVector::ZeroVector;
+	UPROPERTY(BlueprintReadWrite, Category = "Character")
+		FVector LandVelocity = FVector::ZeroVector;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Character")
 		UCurveFloat* StrafeSpeedCurve = nullptr;
@@ -108,6 +110,8 @@ public:
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = true))
 		TMap<EGaits, FGaitSettings> GaitSettings;
+	UPROPERTY(Transient, BlueprintReadOnly, Category = "Animation")
+		class UMotionWarpingComponent* MotionWarpingComponent;
 
 private:
 

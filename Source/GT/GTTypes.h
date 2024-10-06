@@ -42,3 +42,40 @@ enum class EGaits : uint8
 	Jogging      UMETA(DisplayName = "Jogging"),
 	Sprinting    UMETA(DisplayName = "Sprinting")
 };
+
+UENUM(BlueprintType)
+enum class EMovementType : uint8
+{
+	OnGround     UMETA(DisplayName = "OnGround"),
+	InAir        UMETA(DisplayName = "InAir")
+};
+
+UENUM(BlueprintType)
+enum class EMovementState : uint8
+{
+	Idle         UMETA(DisplayName = "Idle"),
+	Moving       UMETA(DisplayName = "Moving")
+};
+
+UENUM(BlueprintType)
+enum class ERotationMode : uint8
+{
+	OrientToRotation     UMETA(DisplayName = "OrientToRotation"),
+	Strafe               UMETA(DisplayName = "Strafe")
+};
+
+UENUM(BlueprintType)
+enum class EStance : uint8
+{
+	Stand         UMETA(DisplayName = "Stand"),
+	Crouch        UMETA(DisplayName = "Crouch")
+};
+
+UENUM(BlueprintType)
+enum class ETraversalActionType : uint8
+{
+	None          UMETA(DisplayName = "None"),
+	Hurdle        UMETA(DisplayName = "Hurdle"),
+	Vault         UMETA(DisplayName = "Vault"),
+	Mantle        UMETA(DisplayName = "Mantle")
+};

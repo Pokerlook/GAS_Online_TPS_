@@ -5,10 +5,13 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "KismetAnimationLibrary.h"
+#include "MotionWarpingComponent.h"
 
 AGTCharacterBase::AGTCharacterBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
+
+    MotionWarpingComponent = CreateDefaultSubobject<UMotionWarpingComponent>(TEXT("MotionWarping"));
 
     GetCharacterMovement()->RotationRate = FRotator(0.f, 0.f, -1.f);
     GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
