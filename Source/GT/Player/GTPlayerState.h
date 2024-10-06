@@ -20,7 +20,7 @@ public:
 	virtual void GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const override;
 
 public:
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Replicated)
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Replicated)
 		ETeam Team = ETeam::NoTeam;
 private:
 };

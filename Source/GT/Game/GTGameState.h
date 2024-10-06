@@ -20,6 +20,9 @@ class GT_API AGTGameState : public AGameState
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
+	UFUNCTION(NetMulticast, Reliable)
+		void MulticastTeamChangingNotify(const TArray<AGTPlayerState*>& TeamRed, const TArray<AGTPlayerState*>& TeamBlue);
+
 	UFUNCTION(BlueprintImplementableEvent, Category = "Team")	// Only Used(implemented) at Lobby... (at LobbyGameState)
 		void TeamChangingNotify(const TArray<AGTPlayerState*> &TeamRed, const TArray<AGTPlayerState*> &TeamBlue);
 public:

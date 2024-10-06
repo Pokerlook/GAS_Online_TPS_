@@ -39,6 +39,6 @@ UENUM(BlueprintType)
 enum class EGaits : uint8
 {
 	Sneeking      UMETA(DisplayName = "Sneeking"),
-	Normal      UMETA(DisplayName = "Normal"),
+	Jogging      UMETA(DisplayName = "Jogging"),
 	Sprinting    UMETA(DisplayName = "Sprinting")
 };

@@ -28,7 +28,7 @@ void AGTGameMode::PostLogin(APlayerController* NewPlayer)
 				GTPState->Team = ETeam::BlueTeam;
 			}
 		}
-		GTGameState->TeamChangingNotify(GTGameState->RedTeam, GTGameState->BlueTeam);
+		GTGameState->MulticastTeamChangingNotify(GTGameState->RedTeam, GTGameState->BlueTeam);
 		
 		
 	}
@@ -49,7 +49,7 @@ void AGTGameMode::Logout(AController* Exiting)
 		{
 			GTGameState->BlueTeam.Remove(GTPState);
 		}
-		GTGameState->TeamChangingNotify(GTGameState->RedTeam, GTGameState->BlueTeam);
+		GTGameState->MulticastTeamChangingNotify(GTGameState->RedTeam, GTGameState->BlueTeam);
 	}
 	Super::Logout(Exiting);
 }
@@ -79,5 +79,5 @@ void AGTGameMode::ChangeTeam(AGTPlayerState* PS, ETeam TeamtoChange)
 
 	PS->Team = TeamtoChange;
 
-	GTGameState->TeamChangingNotify(GTGameState->RedTeam, GTGameState->BlueTeam);
+	GTGameState->MulticastTeamChangingNotify(GTGameState->RedTeam, GTGameState->BlueTeam);
 }

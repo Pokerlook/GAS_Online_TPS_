@@ -13,6 +13,11 @@ void AGTGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLife
 	DOREPLIFETIME(AGTGameState, BlueTeam);
 }
 
+void AGTGameState::MulticastTeamChangingNotify_Implementation(const TArray<AGTPlayerState*>& TeamRed, const TArray<AGTPlayerState*>& TeamBlue)
+{
+	TeamChangingNotify(RedTeam, BlueTeam);
+}
+
 void AGTGameState::OnRep_Team()
 {
 	TeamChangingNotify(RedTeam, BlueTeam);

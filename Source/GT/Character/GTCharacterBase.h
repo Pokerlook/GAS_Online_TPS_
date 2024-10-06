@@ -43,12 +43,16 @@ public:
 	AGTCharacterBase();
 
 	virtual void Tick(float DeltaTime) override;
+	virtual void Jump() override;
+
+	UFUNCTION(BlueprintCallable)
+		void ToggleSneek(bool Newbool);
 
 	UFUNCTION(BlueprintCallable)
 		void ToggleSprint(bool Newbool);
 
 	UFUNCTION(BlueprintCallable)
-		void ToggleCrouch(bool Newbool);
+		void ToggleCrouch();
 
 	UFUNCTION(BlueprintCallable)
 		void ToggleStrafe(bool Newbool);
@@ -58,9 +62,20 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	virtual void Landed(const FHitResult& Hit) override;
+
+	float CalculateMaxSpeed() const;
+
+private:
 
 
 public:
+
+	UPROPERTY(BlueprintReadOnly, Category = "Character")
+		EGaits Gait;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Character")
+		bool bWantsToAim = false;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
 		bool bWantsToStrafe = false;
@@ -68,8 +83,32 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
 		bool bWantsToRun = false;
 
+	UPROPERTY(BlueprintReadWrite, Category = "Character")
+		bool JustLanded = false;
+
+	//UPROPERTY(BlueprintReadWrite, Category = "Character")
+	//	FVector LandVelocity = FVector::ZeroVector;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Character")
+		UCurveFloat* StrafeSpeedCurve = nullptr;
+
+
+	UPROPERTY(BlueprintReadWrite, Category = "Character")
+		FVector WalkSpeed = FVector(250.f, 200.f, 175.f);
+
+	UPROPERTY(BlueprintReadWrite, Category = "Character")
+		FVector JogSpeed = FVector(500.f, 350.f, 300.f);
+
+	UPROPERTY(BlueprintReadWrite, Category = "Character")
+		FVector SprintSpeed = FVector(700.f, 700.f, 700.f);
+
+	UPROPERTY(BlueprintReadWrite, Category = "Character")
+		FVector CrouchSpeed = FVector(250.f, 200.f, 175.f);
+
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = true))
 		TMap<EGaits, FGaitSettings> GaitSettings;
+
+private:
 
 };

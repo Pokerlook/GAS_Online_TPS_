@@ -11,10 +11,9 @@
 
 ULobbyScreen::ULobbyScreen()
 {
-	ConstructorHelpers::FClassFinder<UUserWidget> 
-		PLAYERCARD_CLASS(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/Blueprint/MenuLobby/Lobby/WBP_PlayerCard.WBP_PlayerCard_C'"));
-	if (PLAYERCARD_CLASS.Class) PlayerCardClass = PLAYERCARD_CLASS.Class;
-
+	//ConstructorHelpers::FClassFinder<UUserWidget>
+	//	PLAYERCARD_CLASS(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/Blueprint/MenuLobby/Lobby/WBP_PlayerCard.WBP_PlayerCard_C'"));
+	//if (PLAYERCARD_CLASS.Class) PlayerCardClass = PLAYERCARD_CLASS.Class;
 }
 
 void ULobbyScreen::UpdateTeamChange(const TArray<AGTPlayerState*>& TeamRed, const TArray<AGTPlayerState*>& TeamBlue)
@@ -26,7 +25,8 @@ void ULobbyScreen::UpdateTeamChange(const TArray<AGTPlayerState*>& TeamRed, cons
 	SB_RedTeamList->ClearChildren();
 	SB_BlueTeamList->ClearChildren();
 
-	if (TeamRed.Num() > 0)
+
+	if (TeamRed.Num() >0)
 	{
 		for (int i = 0; i < TeamRed.Num(); i++)
 		{
@@ -40,6 +40,7 @@ void ULobbyScreen::UpdateTeamChange(const TArray<AGTPlayerState*>& TeamRed, cons
 			UTexture2D* Icon = UAdvancedSteamFriendsLibrary::GetSteamFriendAvatar(NetID, ResultSwitch, SteamAvatarSize::SteamAvatar_Medium);
 
 			UPlayerCard* PlayerCardWidget = CreateWidget<UPlayerCard>(this, PlayerCardClass);
+
 			PlayerCardWidget->PlayerName = PlayerName;
 			PlayerCardWidget->SteamIcon = Icon;
 			PlayerCardWidget->PlayerState = TeamRed[i];
@@ -74,4 +75,7 @@ void ULobbyScreen::UpdateTeamChange(const TArray<AGTPlayerState*>& TeamRed, cons
 	FString BlueTeamText = FString::FromInt(TeamBlue.Num()) + " / 8";
 	TXT_RedTeamNumber->SetText(FText::FromString(RedTeamText));
 	TXT_BlueTeamNumber->SetText(FText::FromString(BlueTeamText));
+
+
+//	InvalidateLayoutAndVolatility();
 }
