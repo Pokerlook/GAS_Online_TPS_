@@ -60,7 +60,7 @@ enum class EMovementState : uint8
 UENUM(BlueprintType)
 enum class ERotationMode : uint8
 {
-	OrientToRotation     UMETA(DisplayName = "OrientToRotation"),
+	OrientToMovement     UMETA(DisplayName = "OrientToRotation"),
 	Strafe               UMETA(DisplayName = "Strafe")
 };
 

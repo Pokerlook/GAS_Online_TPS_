@@ -65,10 +65,10 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Locomotion", meta = (BlueprintThreadSafe))
 		void UpdateStates();
 
-/*
 	// Movement Analysis
 	UFUNCTION(BlueprintCallable, Category = "MovementAnalysis", meta = (BlueprintThreadSafe))
 		bool IsMoving() const;
+	/*
 	UFUNCTION(BlueprintCallable, Category = "MovementAnalysis", meta = (BlueprintThreadSafe))
 		bool IsStarting() const;
 	UFUNCTION(BlueprintCallable, Category = "MovementAnalysis", meta = (BlueprintThreadSafe))
@@ -95,8 +95,8 @@ protected:
 		float GetOffsetRootTranslationHalfLife() const;
 	UFUNCTION(BlueprintCallable, Category = "RootOffset", meta = (BlueprintThreadSafe))
 		EOrientationWarpingSpace GetOrientationWarpingSpace() const;
-	//UFUNCTION(BlueprintCallable, Category = "RootOffset", meta = (BlueprintThreadSafe))
-	//	void UpdateOffsetRoot(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
+	UFUNCTION(BlueprintCallable, Category = "RootOffset", meta = (BlueprintThreadSafe))
+		void UpdateOffsetRoot(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
 
 	// AimOffset
 	UFUNCTION(BlueprintCallable, Category = "AImOffset", meta = (BlueprintThreadSafe))
@@ -125,10 +125,10 @@ protected:
 		bool EnableSteering() const;
 	UFUNCTION(BlueprintCallable, Category = "BlendStack", meta = (BlueprintThreadSafe))
 		FQuat GetDesiredFacing() const;
-	//UFUNCTION(Category = "BlendStack", BlueprintCallable, meta = (BlueprintThreadSafe))
-	//	void UpdateBlendStack(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
-
-	*/
+	UFUNCTION(Category = "BlendStack", BlueprintCallable, meta = (BlueprintThreadSafe))
+		void UpdateBlendStack(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
+		*/
+	
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "AimOffset")
 		float MaxTurnAngle = 90.f;
@@ -150,7 +150,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "EssentialValues")
 		FVector Velocity = FVector::ZeroVector;
 	UPROPERTY(BlueprintReadOnly, Category = "EssentialValues")
-		FVector Velocity_LastFrame = FVector::ZeroVector;
+		FVector VelocityLastFrame = FVector::ZeroVector;
 	UPROPERTY(BlueprintReadOnly, Category = "EssentialValues")
 		FVector VelocityAcceleration = FVector::ZeroVector;
 	UPROPERTY(BlueprintReadOnly, Category = "EssentialValues")

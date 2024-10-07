@@ -14,7 +14,7 @@ AGTCharacterPlayer::AGTCharacterPlayer()
 
 	bUseControllerRotationYaw = true; 
 	GetCharacterMovement()->bOrientRotationToMovement = false;
-//	GetCharacterMovement()->bUseControllerDesiredRotation = false;
+//	GetCharacterMovement()->bUseControllerDesiredRotation = false; // false? true?
 //	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
 //	GetCharacterMovement()->SetCrouchedHalfHeight(70.f);
 

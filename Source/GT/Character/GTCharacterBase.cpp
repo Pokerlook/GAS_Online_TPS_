@@ -123,6 +123,7 @@ void AGTCharacterBase::ToggleStrafe(bool Newbool)	// true : character rotates al
     bWantsToStrafe = Newbool;
     bUseControllerRotationYaw = Newbool;
     GetCharacterMovement()->bOrientRotationToMovement = !Newbool;
+ //   GetCharacterMovement()->bUseControllerDesiredRotation = Newbool; // use? no? turn in place...
 }
 
 void AGTCharacterBase::ToggleAim(bool Newbool)
