@@ -15,17 +15,17 @@ public class GT : ModuleRules
         });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
-            "MotionTrajectory", "PoseSearch", "AIModule", "AnimGraphRuntime", "Chooser", "AnimationWarpingRuntime", "BlendStack", "MotionWarping"
-        , "AnimationLocomotionLibraryRuntime"
+            "MotionTrajectory", "PoseSearch", "MotionWarping", "AIModule", "Chooser",
+            "AnimGraphRuntime", "AnimationWarpingRuntime", "BlendStack", "AnimationLocomotionLibraryRuntime"
 
     //        "GameplayTags", "GameplayTasks", "NavigationSystem", "Niagara"
         });
 
 		// Uncomment if you are using Slate UI
-		PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
+		//PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 		
 		// Uncomment if you are using online features
-		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
+		PrivateDependencyModuleNames.Add("OnlineSubsystem");
 
 		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
 	}

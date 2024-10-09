@@ -13,13 +13,19 @@ AGTCharacterBase::AGTCharacterBase()
 
     MotionWarpingComponent = CreateDefaultSubobject<UMotionWarpingComponent>(TEXT("MotionWarping"));
 
-    GetCharacterMovement()->RotationRate = FRotator(0.f, 0.f, -1.f);
+    GetCharacterMovement()->JumpZVelocity = 500.f;
+    GetCharacterMovement()->GroundFriction = 5.f;
+    GetCharacterMovement()->MinAnalogWalkSpeed = 150.f;
+    GetCharacterMovement()->bCanWalkOffLedgesWhenCrouching = true;
+    GetCharacterMovement()->AirControl = 0.25f;
     GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
+
+    GetCharacterMovement()->RotationRate = FRotator(0.f, 0.f, -1.f);
     GetCharacterMovement()->MaxWalkSpeedCrouched = 250.f;
 
     GetCharacterMovement()->MaxWalkSpeed = 500.f;
     GetCharacterMovement()->MaxAcceleration = 1200.f;
-    GetCharacterMovement()->BrakingDecelerationWalking = 300.f;
+    GetCharacterMovement()->BrakingDecelerationWalking = 750.f;
     GetCharacterMovement()->BrakingFrictionFactor = 1.f;
     GetCharacterMovement()->bUseSeparateBrakingFriction = false; 
     GetCharacterMovement()->BrakingFriction = 1.5f;
@@ -28,7 +34,7 @@ AGTCharacterBase::AGTCharacterBase()
     FGaitSettings SneekingSettings;
     SneekingSettings.MaxWalkSpeed = 250.f;
     SneekingSettings.MaxAcceleration = 800.f;
-    SneekingSettings.BrakingDeceleration = 400.f;
+    SneekingSettings.BrakingDeceleration = 900.f;
     SneekingSettings.BrakingFrictionFactor = 1;
     SneekingSettings.UseSeperateBrakingFriction = true;
     SneekingSettings.BrakingFriction = 1.5f;
@@ -36,7 +42,7 @@ AGTCharacterBase::AGTCharacterBase()
     FGaitSettings JoggingSettings;
     JoggingSettings.MaxWalkSpeed = 500.f;
     JoggingSettings.MaxAcceleration = 1200.f;
-    JoggingSettings.BrakingDeceleration = 300.f;
+    JoggingSettings.BrakingDeceleration = 750.f;
     JoggingSettings.BrakingFrictionFactor = 1.f;
     JoggingSettings.UseSeperateBrakingFriction = false;
     JoggingSettings.BrakingFriction = 1.5f;
@@ -44,7 +50,7 @@ AGTCharacterBase::AGTCharacterBase()
     FGaitSettings SprintingSettings;
     SprintingSettings.MaxWalkSpeed = 700.f;
     SprintingSettings.MaxAcceleration = 2000.f;
-    SprintingSettings.BrakingDeceleration = 200.f;
+    SprintingSettings.BrakingDeceleration = 400.f;
     SprintingSettings.BrakingFrictionFactor = 1.f;
     SprintingSettings.UseSeperateBrakingFriction = false;
     SprintingSettings.BrakingFriction = 1.5f;

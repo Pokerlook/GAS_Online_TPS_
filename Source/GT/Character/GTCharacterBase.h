@@ -74,7 +74,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
 		EMovementType MovementMode;
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
-		EGaits Gait;
+		EGaits Gait = EGaits::Jogging;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
 		bool bWantsToAim = false;

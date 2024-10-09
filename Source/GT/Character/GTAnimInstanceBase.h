@@ -68,7 +68,6 @@ protected:
 	// Movement Analysis
 	UFUNCTION(BlueprintCallable, Category = "MovementAnalysis", meta = (BlueprintThreadSafe))
 		bool IsMoving() const;
-	/*
 	UFUNCTION(BlueprintCallable, Category = "MovementAnalysis", meta = (BlueprintThreadSafe))
 		bool IsStarting() const;
 	UFUNCTION(BlueprintCallable, Category = "MovementAnalysis", meta = (BlueprintThreadSafe))
@@ -85,7 +84,7 @@ protected:
 		bool JustTraversed() const;
 	UFUNCTION(BlueprintCallable, Category = "MovementAnalysis", meta = (BlueprintThreadSafe))
 		bool ShouldSpinTransition() const;
-
+	
 	// Root Offset
 	UFUNCTION(BlueprintCallable, Category = "RootOffset", meta = (BlueprintThreadSafe))
 		EOffsetRootBoneMode GetOffsetRootRotationMode() const;
@@ -103,7 +102,7 @@ protected:
 		bool EnableAO() const;
 	UFUNCTION(BlueprintCallable, Category = "AImOffset", meta = (BlueprintThreadSafe))
 		FRotator GetAOValue() const;
-
+	
 	// Additive Leaning
 	UFUNCTION(BlueprintCallable, Category = "AdditiveLeaning", meta = (BlueprintThreadSafe))
 		FVector CalculateRelativeAccelerationAmount() const;
@@ -112,7 +111,7 @@ protected:
 
 	//State Node Functions
 	UFUNCTION(Category = "MotionMatching", BlueprintCallable, meta = (BlueprintThreadSafe))
-		void UpdateMotionMatchingMovement(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
+		void UpdateMotionMatching(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
 	UFUNCTION(Category = "MotionMatching", BlueprintCallable, meta = (BlueprintThreadSafe))
 		void MotionMatchingPostSelection(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
 	UFUNCTION(BlueprintCallable, Category = "MotionMatching", meta = (BlueprintThreadSafe))
@@ -127,7 +126,7 @@ protected:
 		FQuat GetDesiredFacing() const;
 	UFUNCTION(Category = "BlendStack", BlueprintCallable, meta = (BlueprintThreadSafe))
 		void UpdateBlendStack(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
-		*/
+		
 	
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "AimOffset")
@@ -169,13 +168,9 @@ protected:
 		float HeavyLandSpeedThreshold = 700.f;
 
 	UPROPERTY(BlueprintReadOnly, Category = "EssentialValues")
-		FTransform InteractionTransform;
+		FTransform TraversalInteractionTransform;
 	UPROPERTY(BlueprintReadOnly, Category = "EssentialValues")
 		bool OffsetRootBoneEnabled;
-
-
-	//UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Motion Matching")
-	//	const UChooserTable* LocomotionTable;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Trajectory")
 		FPoseSearchTrajectoryData TrajectoryGenerationData_Idle;
@@ -184,18 +179,11 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Trajectory")
 		FPoseSearchQueryTrajectory Trajectory;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Trajectory")
-		FPoseSearchTrajectory_WorldCollisionResults CollisionResult;
+		FPoseSearchTrajectory_WorldCollisionResults TrajectoryCollision;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Trajectory")
 		float PreviousDesiredControllYaw = 0.f;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Trajectory")
 		FVector FutureVelocity = FVector::ZeroVector;
-
-	//UPROPERTY(BlueprintReadOnly, Category = "Motion Matching")
-	//	float OrientationAlpha = 0.f;
-	//UPROPERTY(BlueprintReadOnly, Category = "Motion Matching")
-	//	float AnimTime = 0.f;
-	//UPROPERTY(BlueprintReadOnly, Category = "Motion Matching")
-	//	UAnimationAsset* AnimAsset = nullptr;
 
 	UPROPERTY(BlueprintReadOnly, Category = "States")
 		EMovementType MovementMode;
@@ -218,4 +206,14 @@ protected:
 		EGaits GaitLastFrame;
 	UPROPERTY(BlueprintReadOnly, Category = "States")
 		EStance StanceLastFrame;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Motion Matching")
+		const UChooserTable* PoseSearchDatabases;
+	UPROPERTY(BlueprintReadOnly, Category = "Motion Matching")
+		float OrientationAlpha = 0.f;
+	UPROPERTY(BlueprintReadOnly, Category = "Motion Matching")
+		float AnimTime = 0.f;
+	UPROPERTY(BlueprintReadOnly, Category = "Motion Matching")
+		UAnimationAsset* AnimAsset = nullptr;
+		
 };
