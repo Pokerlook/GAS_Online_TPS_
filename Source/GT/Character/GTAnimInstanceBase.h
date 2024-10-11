@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GT/GTTypes.h"
+#include "GT/Interface/TraversalInterface.h"
 #include "Chooser.h"
 #include "Animation/AnimInstance.h"
 #include "Animation/AnimInstanceProxy.h"
@@ -43,9 +44,12 @@ public:
  * 
  */
 UCLASS()
-class GT_API UGTAnimInstanceBase : public UAnimInstance
+class GT_API UGTAnimInstanceBase : public UAnimInstance, public ITraversalInterface
 {
 	GENERATED_BODY()
+public:
+	virtual void SetTraversalTransform(FTransform InTransform) override;
+	virtual FTransform GetTraversalTransform() override;
 
 protected:
 

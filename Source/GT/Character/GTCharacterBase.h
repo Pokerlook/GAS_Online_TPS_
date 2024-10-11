@@ -60,6 +60,12 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void ToggleAim(bool Newbool);
 
+	// Traversal
+	void TryTraversal(); 
+	float GetTraversalForwardTraceDistance() const; 
+	void TraversalUpdateWarpTargets();
+	void PerformTraversalAction(FTraversalCheckResult TraversalCheckResult);
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void Landed(const FHitResult& Hit) override;
@@ -70,6 +76,13 @@ private:
 
 
 public:
+	UPROPERTY(BlueprintReadOnly, Category = "Traversal")
+		FTraversalCheckResult TraversalResult;
+	UPROPERTY(BlueprintReadOnly, Category = "Traversal")
+		bool DoingTraversalAction = false;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Traversal")
+		const class UChooserTable* TraversalTable;
+
 
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
 		EMovementType MovementMode;

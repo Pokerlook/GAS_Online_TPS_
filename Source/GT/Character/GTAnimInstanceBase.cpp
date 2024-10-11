@@ -37,6 +37,16 @@ void FGTAnimInstanceProxy::Update(float DeltaSeconds)
 	FAnimInstanceProxy::Update(DeltaSeconds);
 }
 
+void UGTAnimInstanceBase::SetTraversalTransform(FTransform InTransform)
+{
+	TraversalInteractionTransform = InTransform;
+}
+
+FTransform UGTAnimInstanceBase::GetTraversalTransform()
+{
+	return TraversalInteractionTransform;
+}
+
 void UGTAnimInstanceBase::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeThreadSafeUpdateAnimation(DeltaSeconds);

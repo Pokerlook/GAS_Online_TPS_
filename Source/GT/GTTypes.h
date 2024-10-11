@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GTTypes.generated.h"
 
 UENUM(BlueprintType)
 enum class EGameMode : uint8
@@ -78,4 +79,55 @@ enum class ETraversalActionType : uint8
 	Hurdle        UMETA(DisplayName = "Hurdle"),
 	Vault         UMETA(DisplayName = "Vault"),
 	Mantle        UMETA(DisplayName = "Mantle")
+};
+
+
+USTRUCT(BlueprintType)
+struct FTraversalCheckResult : public FTableRowBase
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		ETraversalActionType ActionType;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		bool HasFrontLedge = false;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		FVector FrontLedgeLocation = FVector::ZeroVector;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		FVector FrontLedgeNormal = FVector::ZeroVector;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		bool HasBackLedge = false;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		FVector BackLedgeLocation = FVector::ZeroVector;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		FVector BackLedgeNormal = FVector::ZeroVector;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		bool HasBackFloor = false;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		FVector BackFloorLocation = FVector::ZeroVector;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		float ObstacleHeight = 0.f;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		float ObstacleDepth = 0.f;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		float BackLedgeHeight = 0.f;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		UPrimitiveComponent* HitComponent = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		const UAnimMontage* ChosenMontage = nullptr;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		float StartTime = 0.f;
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		float PlayRate = 0.f;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Traversal Check Result")
+		float Speed = 0.f;
 };

@@ -88,47 +88,48 @@ void AGTPlayerController::Look(const FInputActionValue& InputActionValue)
 
 void AGTPlayerController::OnJumpStarted(const FInputActionValue& InputActionValue)
 {
-	AGTCharacterPlayer* PlayCharacter = GetPawn<AGTCharacterPlayer>();
-	PlayCharacter->Jump();
+	AGTCharacterPlayer* PlayerCharacter = GetPawn<AGTCharacterPlayer>();
+	PlayerCharacter->Jump();
 }
 
 void AGTPlayerController::OnJumpEnded(const FInputActionValue& InputActionValue)
 {
-	AGTCharacterPlayer* PlayCharacter = GetPawn<AGTCharacterPlayer>();
-	PlayCharacter->StopJumping();
+	AGTCharacterPlayer* PlayerCharacter = GetPawn<AGTCharacterPlayer>();
+	PlayerCharacter->StopJumping();
 }
 
 void AGTPlayerController::OnSprintStarted(const FInputActionValue& InputActionValue)
 {
-	AGTCharacterPlayer* PlayCharacter = GetPawn<AGTCharacterPlayer>();
-	PlayCharacter->ToggleSprint(true);
+	AGTCharacterPlayer* PlayerCharacter = GetPawn<AGTCharacterPlayer>();
+	PlayerCharacter->ToggleSprint(true);
 }
 
 void AGTPlayerController::OnSprintEnded(const FInputActionValue& InputActionValue)
 {
-	AGTCharacterPlayer* PlayCharacter = GetPawn<AGTCharacterPlayer>();
-	PlayCharacter->ToggleSprint(false);
+	AGTCharacterPlayer* PlayerCharacter = GetPawn<AGTCharacterPlayer>();
+	PlayerCharacter->ToggleSprint(false);
 }
 
 void AGTPlayerController::OnSneekStarted(const FInputActionValue& InputActionValue)
 {
-	AGTCharacterPlayer* PlayCharacter = GetPawn<AGTCharacterPlayer>();
-	PlayCharacter->ToggleSneek(true);
+	AGTCharacterPlayer* PlayerCharacter = GetPawn<AGTCharacterPlayer>();
+	PlayerCharacter->ToggleSneek(true);
 }
 
 void AGTPlayerController::OnSneekEnded(const FInputActionValue& InputActionValue)
 {
-	AGTCharacterPlayer* PlayCharacter = GetPawn<AGTCharacterPlayer>();
-	PlayCharacter->ToggleSneek(false);
+	AGTCharacterPlayer* PlayerCharacter = GetPawn<AGTCharacterPlayer>();
+	PlayerCharacter->ToggleSneek(false);
 }
 
 void AGTPlayerController::ToggleCrouch(const FInputActionValue& InputActionValue)
 {
-	AGTCharacterPlayer* PlayCharacter = GetPawn<AGTCharacterPlayer>();
-	PlayCharacter->ToggleCrouch();
+	AGTCharacterPlayer* PlayerCharacter = GetPawn<AGTCharacterPlayer>();
+	PlayerCharacter->ToggleCrouch();
 }
 
 void AGTPlayerController::TryTraversal(const FInputActionValue& InputActionValue)
 {
-	AGTCharacterPlayer* PlayCharacter = GetPawn<AGTCharacterPlayer>();
+	AGTCharacterPlayer* PlayerCharacter = GetPawn<AGTCharacterPlayer>();
+	PlayerCharacter->TryTraversal();
 }
