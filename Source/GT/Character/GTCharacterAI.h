@@ -13,5 +13,9 @@ UCLASS()
 class GT_API AGTCharacterAI : public AGTCharacterBase
 {
 	GENERATED_BODY()
-	
+public:
+	AGTCharacterAI();
+
+protected:
+	virtual void BeginPlay() override;
 };

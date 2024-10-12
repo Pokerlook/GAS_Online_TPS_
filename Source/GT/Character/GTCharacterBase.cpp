@@ -16,8 +16,8 @@
 #include "PoseSearch/PoseSearchLibrary.h"
 #include "ChooserFunctionLibrary.h"
 
-//#include "Kismet/GameplayStatics.h"
-//#include "PlayMontageCallbackProxy.h"
+#include "GT/AbilitySystem/GTAbilitySystemComponent.h"
+#include "GT/AbilitySystem/GTAttributeSet.h"
 
 AGTCharacterBase::AGTCharacterBase()
 {
@@ -71,6 +71,13 @@ AGTCharacterBase::AGTCharacterBase()
     GaitSettings.Add(EGaits::Sneeking, SneekingSettings);
     GaitSettings.Add(EGaits::Jogging, JoggingSettings);
     GaitSettings.Add(EGaits::Sprinting, SprintingSettings);
+
+    /// GAS ////
+    AbilitySystemComponent = CreateDefaultSubobject<UGTAbilitySystemComponent>("AbilitySystemComponent");
+    AbilitySystemComponent->SetIsReplicated(true);
+
+    AttributeSet = CreateDefaultSubobject<UGTAttributeSet>("AttributeSet");
+
 }
 
 void AGTCharacterBase::Tick(float DeltaTime)
@@ -454,13 +461,6 @@ void AGTCharacterBase::PerformTraversalAction(FTraversalCheckResult TraversalChe
 
 }
 
-
-void AGTCharacterBase::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
 void AGTCharacterBase::Landed(const FHitResult& Hit)
 {
     LandVelocity = GetCharacterMovement()->Velocity;
@@ -510,4 +510,20 @@ float AGTCharacterBase::CalculateMaxSpeed() const
         return UKismetMathLibrary::MapRangeClamped(StrafeSpeed, 0.f, 1.f, SpeedVector.X, SpeedVector.Y);
     }
     return UKismetMathLibrary::MapRangeClamped(StrafeSpeed, 1.f, 1.f, SpeedVector.Y, SpeedVector.Z);
+}
+
+void AGTCharacterBase::BeginPlay()
+{
+    Super::BeginPlay();
+
+}
+
+UAbilitySystemComponent* AGTCharacterBase::GetAbilitySystemComponent() const
+{
+    return AbilitySystemComponent;
+}
+
+void AGTCharacterBase::InitAbilityActorInfo()
+{
+    AbilitySystemComponent->InitAbilityActorInfo(this, this);
 }

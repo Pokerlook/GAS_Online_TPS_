@@ -4,8 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GT/GTTypes.h"
+#include "AbilitySystemInterface.h"
 #include "GameFramework/Character.h"
 #include "GTCharacterBase.generated.h"
+
+class UAbilitySystemComponent;
+class UAttributeSet;
 
 USTRUCT(BlueprintType)
 struct FGaitSettings : public FTableRowBase
@@ -35,7 +39,7 @@ public:
 };
 
 UCLASS()
-class GT_API AGTCharacterBase : public ACharacter
+class GT_API AGTCharacterBase : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
@@ -43,7 +47,7 @@ public:
 	AGTCharacterBase();
 
 	virtual void Tick(float DeltaTime) override;
-	virtual void Jump() override;
+	virtual void Jump() override;	
 
 	UFUNCTION(BlueprintCallable)
 		void ToggleSneek(bool Newbool);
@@ -69,11 +73,18 @@ public:
 	void TraversalUpdateWarpTargets();
 	void PerformTraversalAction(FTraversalCheckResult TraversalCheckResult);
 
+	// GAS
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void Landed(const FHitResult& Hit) override;
 
 	float CalculateMaxSpeed() const;
+
+	// GAS
+	virtual void InitAbilityActorInfo();
 
 private:
 
@@ -128,6 +139,12 @@ protected:
 		TMap<EGaits, FGaitSettings> GaitSettings;
 	UPROPERTY(Transient, BlueprintReadOnly, Category = "Animation")
 		class UMotionWarpingComponent* MotionWarpingComponent;
+
+	UPROPERTY(BlueprintReadOnly, Category = "GAS")
+		TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
+
+	UPROPERTY(BlueprintReadOnly, Category = "GAS")
+		TObjectPtr<UAttributeSet> AttributeSet;
 
 private:
 

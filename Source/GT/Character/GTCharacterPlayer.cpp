@@ -6,6 +6,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
+#include "GT/AbilitySystem/GTAbilitySystemComponent.h"
+
 AGTCharacterPlayer::AGTCharacterPlayer()
 {
 	// Configure character movement	
@@ -27,4 +29,21 @@ AGTCharacterPlayer::AGTCharacterPlayer()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
+
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
+
+}
+
+void AGTCharacterPlayer::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+	// Init ability actor info for the Server
+	InitAbilityActorInfo();
+}
+
+void AGTCharacterPlayer::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+	// Init ability actor info for the Client
+	InitAbilityActorInfo();
 }

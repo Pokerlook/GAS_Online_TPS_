@@ -17,6 +17,9 @@ class GT_API AGTCharacterPlayer : public AGTCharacterBase
 public:
 	AGTCharacterPlayer();
 
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+
 protected:
 
 private:
