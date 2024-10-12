@@ -6,7 +6,7 @@
 
 AGTPlayerState::AGTPlayerState()
 {
-	NetUpdateFrequency = 100.f;
+	//NetUpdateFrequency = 100.f;
 }
 
 void AGTPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
