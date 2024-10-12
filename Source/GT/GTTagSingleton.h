@@ -36,7 +36,6 @@ public:
 	FGameplayTag InputTag_Traversal;	// g
 	FGameplayTag InputTag_FreeLook;	// left alt
 
-
 private:
 	static FGTGameplayTags GameplayTags;
 };

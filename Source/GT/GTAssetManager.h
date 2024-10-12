@@ -16,6 +16,7 @@ class GT_API UGTAssetManager : public UAssetManager
 
 public:
 	static UGTAssetManager& Get();
+
 protected:
 	virtual void StartInitialLoading() override;
 };

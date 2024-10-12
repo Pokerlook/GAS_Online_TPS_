@@ -16,7 +16,7 @@ void UGTAssetManager::StartInitialLoading()
 {
 	Super::StartInitialLoading();
 
-
+	FGTGameplayTags::InitializeNativeGameplayTags();
 
 	// This is required to use Target Data!
 	UAbilitySystemGlobals::Get().InitGlobalData();
