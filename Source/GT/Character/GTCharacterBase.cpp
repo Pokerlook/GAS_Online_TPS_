@@ -32,7 +32,8 @@ AGTCharacterBase::AGTCharacterBase()
     GetCharacterMovement()->AirControl = 0.25f;
     GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
 
-    GetCharacterMovement()->RotationRate = FRotator(0.f, 0.f, -1.f);
+    //GetCharacterMovement()->RotationRate = FRotator(0.f, -1.f, 0.f);
+    GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
     GetCharacterMovement()->MaxWalkSpeedCrouched = 250.f;
 
     GetCharacterMovement()->MaxWalkSpeed = 500.f;
@@ -81,7 +82,11 @@ void AGTCharacterBase::Tick(float DeltaTime)
 void AGTCharacterBase::Jump()
 {
     Super::Jump();
-    //   PlayAudio(UKismetMathLibrary::MapRangeClamped(GetCharacterMovement()->Velocity.Size2D(), 0.f, 500.f, 0.5f, 1.f), true);
+    if (CanJump())
+    {
+        PlayJumpLandAudio(UKismetMathLibrary::MapRangeClamped(GetCharacterMovement()->Velocity.Size2D(), 0.f, 500.f, 0.5f, 1.f), true);
+        GetCharacterMovement()->RotationRate = FRotator(0.f, 200.f, 0.f);
+    }
 }
 
 void AGTCharacterBase::ToggleSneek(bool Newbool)
@@ -423,7 +428,7 @@ void AGTCharacterBase::PerformTraversalAction(FTraversalCheckResult TraversalChe
     if (!AnimInstance) return;
 
     // Play the montage
-    float MontageDuration = AnimInstance->Montage_Play(MontageToPlay);
+    float MontageDuration = AnimInstance->Montage_Play(MontageToPlay, TraversalResult.PlayRate, EMontagePlayReturnType::MontageLength, TraversalResult.StartTime);
 
     DoingTraversalAction = true;
     GetCapsuleComponent()->IgnoreComponentWhenMoving(TraversalResult.HitComponent, true);
@@ -436,7 +441,7 @@ void AGTCharacterBase::PerformTraversalAction(FTraversalCheckResult TraversalChe
         EndDelegate.BindLambda([this](UAnimMontage* Montage, bool bInterrupted)
         {
             // if (bInterrupted) Montage was interrupted, else Montage completed
-            DoingTraversalAction = true;
+            DoingTraversalAction = false;
             GetCapsuleComponent()->IgnoreComponentWhenMoving(TraversalResult.HitComponent, false);
             EMovementMode NewMovementMode = (TraversalResult.ActionType == ETraversalActionType::Vault) ?
                 EMovementMode::MOVE_Falling : EMovementMode::MOVE_Walking;
@@ -458,9 +463,11 @@ void AGTCharacterBase::BeginPlay()
 
 void AGTCharacterBase::Landed(const FHitResult& Hit)
 {
-//    FVector LandVelocity = GetCharacterMovement()->Velocity;
-//    PlayAudio(UKismetMathLibrary::MapRangeClamped(LandVelocity.Z, -500.f, -900.f, 0.5f, 1.5f), false);
-    JustLanded = true; 
+    LandVelocity = GetCharacterMovement()->Velocity;
+    PlayJumpLandAudio(UKismetMathLibrary::MapRangeClamped(LandVelocity.Z, -500.f, -900.f, 0.5f, 1.5f), false);
+    GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
+
+    JustLanded = true;
 
     FTimerHandle Handle;
     GetWorld()->GetTimerManager().SetTimer(Handle, FTimerDelegate::CreateLambda([this] {

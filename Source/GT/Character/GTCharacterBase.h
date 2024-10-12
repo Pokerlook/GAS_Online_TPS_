@@ -60,6 +60,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void ToggleAim(bool Newbool);
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void PlayJumpLandAudio(float NewVolume, bool Jumped);
+
 	// Traversal
 	void TryTraversal(); 
 	float GetTraversalForwardTraceDistance() const; 
