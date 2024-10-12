@@ -9,16 +9,16 @@ public class GT : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] 
-		{ "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", //"GameplayAbilities", "UMG", "NetCore"
+		{ "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "GameplayAbilities", "UMG", //"NetCore",
             "AdvancedSessions",
             "AdvancedSteamSessions"
         });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
             "MotionTrajectory", "PoseSearch", "MotionWarping", "AIModule", "Chooser",
-            "AnimGraphRuntime", "AnimationWarpingRuntime", "BlendStack", "AnimationLocomotionLibraryRuntime"
+            "AnimGraphRuntime", "AnimationWarpingRuntime", "BlendStack", "AnimationLocomotionLibraryRuntime",
 
-    //        "GameplayTags", "GameplayTasks", "NavigationSystem", "Niagara"
+            "GameplayTags", "GameplayTasks", "NavigationSystem", "Niagara"
         });
 
 		// Uncomment if you are using Slate UI
