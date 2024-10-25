@@ -23,7 +23,7 @@ public:
 	FGameplayTag InputTag_Aim;		// rmb
 	FGameplayTag InputTag_Reload;	// r
 	FGameplayTag InputTag_HolsterWeapon;	// x
-	FGameplayTag InputTag_Wheel;	//  mouse wheel
+	//FGameplayTag InputTag_Wheel;	//  mouse wheel // At PlayerController, activate GA with Tag Depending on what weapon it is holding
 	FGameplayTag InputTag_Weapon1;
 	FGameplayTag InputTag_Weapon2;
 	FGameplayTag InputTag_Weapon3;

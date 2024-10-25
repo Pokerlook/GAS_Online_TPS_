@@ -10,3 +10,5 @@ GTTypes -> 맵 & 모드 Enum 수정.
 블루프린트 Content/Blueprint/MenuLobby/Loby의 
  WBP_LobbyModeMapChanger에서 콤보박스 2개 수정. 그래프에서 SwitchOnString수정
 
+인풋액션 추가 시 Content/Blueprint/Input/DA_GTInputConfig.DA_GTInputConfig에 태그랑 묶어서 연결.
+Content/Blueprint/Input의 IMC에도 추가.

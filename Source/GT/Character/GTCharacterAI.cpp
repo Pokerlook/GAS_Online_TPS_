@@ -13,5 +13,5 @@ AGTCharacterAI::AGTCharacterAI()
 void AGTCharacterAI::BeginPlay()
 {
 	Super::BeginPlay();
-	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	InitAbilityActorInfo();
 }

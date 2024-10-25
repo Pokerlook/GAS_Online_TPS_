@@ -10,15 +10,11 @@
 
 AGTCharacterPlayer::AGTCharacterPlayer()
 {
-	// Configure character movement	
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 
 	bUseControllerRotationYaw = true; 
 	GetCharacterMovement()->bOrientRotationToMovement = false;
-//	GetCharacterMovement()->bUseControllerDesiredRotation = false; // false? true?
-//	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
-//	GetCharacterMovement()->SetCrouchedHalfHeight(70.f);
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(GetMesh());
@@ -38,12 +34,5 @@ void AGTCharacterPlayer::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
 	// Init ability actor info for the Server
-	InitAbilityActorInfo();
-}
-
-void AGTCharacterPlayer::OnRep_PlayerState()
-{
-	Super::OnRep_PlayerState();
-	// Init ability actor info for the Client
 	InitAbilityActorInfo();
 }

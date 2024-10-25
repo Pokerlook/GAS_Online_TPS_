@@ -40,10 +40,10 @@ void FGTGameplayTags::InitializeNativeGameplayTags()
 		FName("InputTag.HolsterWeapon"),
 		FString("Input Tag for HolsterWeapon, Default is X")
 	);
-	GameplayTags.InputTag_Wheel = UGameplayTagsManager::Get().AddNativeGameplayTag(
-		FName("InputTag.Wheel"),
-		FString("Input Tag for Wheel, Default is Mouse Wheel ")
-	);
+	//GameplayTags.InputTag_Wheel = UGameplayTagsManager::Get().AddNativeGameplayTag(
+	//	FName("InputTag.Wheel"),
+	//	FString("Input Tag for Wheel, Default is Mouse Wheel ")
+	//);
 	GameplayTags.InputTag_Weapon1 = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("InputTag.Weapon1"),
 		FString("Input Tag for Weapon1, Default is 1")
@@ -80,8 +80,8 @@ void FGTGameplayTags::InitializeNativeGameplayTags()
 		FString("Input Tag for ViewMode, Default is V")
 	);
 	GameplayTags.InputTag_Traversal = UGameplayTagsManager::Get().AddNativeGameplayTag(
-		FName("InputTag.Vault"),
-		FString("Input Tag for Vault, Default is G")
+		FName("InputTag.Traversal"),
+		FString("Input Tag for Traversal, Default is G")
 	);
 	GameplayTags.InputTag_FreeLook = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("InputTag.FreeLook"),

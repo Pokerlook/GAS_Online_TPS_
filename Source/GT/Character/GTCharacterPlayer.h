@@ -18,7 +18,7 @@ public:
 	AGTCharacterPlayer();
 
 	virtual void PossessedBy(AController* NewController) override;
-	virtual void OnRep_PlayerState() override;
+	//virtual void OnRep_PlayerState() override; // PS에 ASC가 있는게 아니니까 괜찮을 것 같은데, 클라이언트에서 문제 있으면 여기서도 InitAbilityActorInfo
 
 protected:
 

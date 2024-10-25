@@ -526,4 +526,35 @@ UAbilitySystemComponent* AGTCharacterBase::GetAbilitySystemComponent() const
 void AGTCharacterBase::InitAbilityActorInfo()
 {
     AbilitySystemComponent->InitAbilityActorInfo(this, this);
+    if (HasAuthority())
+    {
+        InitializeDefaultAttributes();
+        AddCharacterAbilities();
+    }
+}
+
+void AGTCharacterBase::InitializeDefaultAttributes() const
+{
+    check(IsValid(GetAbilitySystemComponent()));
+    check(DefaultAttributes);
+    FGameplayEffectContextHandle ContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
+    ContextHandle.AddSourceObject(this);
+    const FGameplayEffectSpecHandle SpecHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(DefaultAttributes, 1, ContextHandle);
+    GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpecHandle.Data.Get(), GetAbilitySystemComponent());
+}
+
+void AGTCharacterBase::AddCharacterAbilities()
+{
+    UGTAbilitySystemComponent* GTASC = CastChecked<UGTAbilitySystemComponent>(AbilitySystemComponent);
+    if (!HasAuthority()) return;
+
+    /*for (TSubclassOf<UGameplayAbility> AbilityClass : StartupAbilities)
+    {
+        FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass, 1);
+        if (const UGTGameplayAbility* GTAbility = Cast<UGTGameplayAbility>(AbilitySpec.Ability))
+        {
+            AbilitySpec.DynamicAbilityTags.AddTag(GTAbility->StartupInputTag);
+            GTASC->GiveAbility(AbilitySpec);
+        }
+    }*/
 }

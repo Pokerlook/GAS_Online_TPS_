@@ -10,6 +10,8 @@
 
 class UAbilitySystemComponent;
 class UAttributeSet;
+class UGameplayEffect;
+class UGameplayAbility;
 
 USTRUCT(BlueprintType)
 struct FGaitSettings : public FTableRowBase
@@ -85,6 +87,8 @@ protected:
 
 	// GAS
 	virtual void InitAbilityActorInfo();
+	void InitializeDefaultAttributes() const;
+	void AddCharacterAbilities();
 
 private:
 
@@ -145,6 +149,15 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, Category = "GAS")
 		TObjectPtr<UAttributeSet> AttributeSet;
+
+
+	UPROPERTY(EditAnywhere, Category = "Abilities")
+		TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Attributes")
+		TSubclassOf<UGameplayEffect> DefaultAttributes;
+
+
 
 private:
 
